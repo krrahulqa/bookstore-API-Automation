@@ -7,15 +7,14 @@ import io.cucumber.junit.CucumberOptions; // Cucumber options
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        features = "src/test/resources/features",                // Feature file location
+        features = "src/test/resources/features",
         glue = {"com.bookstore.stepdefs", "com.bookstore.testHooks"},
         plugin = {
-                "pretty",
-                "html:target/cucumber-reports",
-                "json:target/cucumber.json",
-                "io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm"
+                "pretty",                                            // Console output
+                "html:target/cucumber-reports",                      // HTML report
+                "json:target/cucumber.json"                          // JSON report
         },
-        monochrome = true,                                       // Clean console output
+        monochrome = true,
         tags = "@regression"
 )
 public class TestRunner {
